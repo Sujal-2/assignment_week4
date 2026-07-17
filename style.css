@@ -1,0 +1,377 @@
+/* ======================================
+   Global Styles
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.7;
+}
+
+/* ======================================
+   Links
+====================================== */
+
+a{
+    text-decoration:none;
+    color:#ffffff;
+    transition:.3s;
+}
+
+a:hover{
+    color:#ffd166;
+}
+
+/* ======================================
+   Header
+====================================== */
+
+header{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-area img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo-area h1{
+    font-size:28px;
+    font-weight:600;
+}
+
+/* ======================================
+   Navigation
+====================================== */
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    font-weight:500;
+    font-size:16px;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ======================================
+   Sections
+====================================== */
+
+section{
+    max-width:1200px;
+    margin:70px auto;
+    padding:0 30px;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:34px;
+    color:#0f172a;
+}
+
+/* ======================================
+   About
+====================================== */
+
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.profile{
+    width:280px;
+    border-radius:50%;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text p{
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+/* ======================================
+   Skills
+====================================== */
+
+.skills-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skills-list dt{
+    background:#2563eb;
+    color:white;
+    padding:12px;
+    border-radius:8px 8px 0 0;
+    font-weight:bold;
+}
+
+.skills-list dd{
+    background:white;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:0 0 8px 8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+/* ======================================
+   Projects
+====================================== */
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+}
+
+.project h3{
+    margin-bottom:15px;
+    color:#1e3a8a;
+}
+
+.project p{
+    margin-bottom:20px;
+}
+
+.project a{
+    display:inline-block;
+    background:#2563eb;
+    padding:12px 20px;
+    border-radius:6px;
+}
+
+.project a:hover{
+    background:#1d4ed8;
+    color:white;
+}
+
+/* ======================================
+   Contact
+====================================== */
+
+.contact-container{
+    max-width:700px;
+    margin:auto;
+}
+
+form{
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+button{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:15px;
+    font-size:17px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+/* ======================================
+   Footer
+====================================== */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    margin-top:60px;
+}
+
+footer p{
+    margin:10px 0;
+}
+
+footer a{
+    color:#38bdf8;
+}
+
+footer a:hover{
+    color:#ffd166;
+}
+
+/* ======================================
+   Tablet
+====================================== */
+
+@media screen and (max-width:992px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+.about-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.about-text p{
+    text-align:left;
+}
+
+}
+
+/* ======================================
+   Mobile
+====================================== */
+
+@media screen and (max-width:768px){
+
+header{
+    padding:20px;
+}
+
+.logo-area{
+    flex-direction:column;
+}
+
+.logo-area h1{
+    font-size:24px;
+    text-align:center;
+}
+
+nav ul{
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+}
+
+section{
+    margin:50px auto;
+    padding:20px;
+}
+
+section h2{
+    font-size:28px;
+}
+
+.profile{
+    width:220px;
+}
+
+.project{
+    padding:20px;
+}
+
+form{
+    padding:25px;
+}
+
+}
+
+/* ======================================
+   Small Mobile
+====================================== */
+
+@media screen and (max-width:480px){
+
+.logo-area img{
+    width:50px;
+    height:50px;
+}
+
+.logo-area h1{
+    font-size:22px;
+}
+
+section h2{
+    font-size:24px;
+}
+
+button{
+    font-size:16px;
+}
+
+}
