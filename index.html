@@ -30,13 +30,13 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
     </header>
 
-    <!-- Main Content -->
     <main>
 
         <!-- About -->
@@ -53,19 +53,15 @@
                 <div class="about-text">
 
                     <p>
-                        Hello! My name is <strong>Sujal Tuladhar</strong>. I am currently pursuing a Bachelor of
-                        Information Technology (BIT) at International American University.
+                        Hello! My name is <strong>Sujal Tuladhar</strong>. I am currently pursuing a Bachelor of Information Technology (BIT) at International American University.
                     </p>
 
                     <p>
-                        I enjoy learning web development, programming, database management, cloud computing,
-                        and artificial intelligence. I have gained practical experience with HTML5, Python,
-                        Java, SQL, Git, and GitHub through coursework and personal projects.
+                        I enjoy learning web development, programming, database management, cloud computing, and artificial intelligence. I have gained practical experience with HTML5, Python, Java, SQL, Git, and GitHub through coursework and personal projects.
                     </p>
 
                     <p>
-                        My goal is to become a skilled AI engineer by building practical
-                        solutions that solve real-world problems.
+                        My goal is to become a skilled AI engineer by building practical solutions that solve real-world problems.
                     </p>
 
                 </div>
@@ -110,14 +106,12 @@
 
             <div class="project-container">
 
-                <!-- Project 1 -->
                 <article class="project">
 
                     <h3>Bank Account Management System</h3>
 
                     <p>
-                        A Java console application developed using object-oriented programming concepts,
-                        including inheritance, encapsulation, constructors, and file handling.
+                        A Java console application developed using object-oriented programming concepts, including inheritance, encapsulation, constructors, and file handling.
                     </p>
 
                     <a href="https://github.com/Sujal-2/BankAccountSystem" target="_blank">
@@ -126,14 +120,12 @@
 
                 </article>
 
-                <!-- Project 2 -->
                 <article class="project">
 
                     <h3>Personal Portfolio Website</h3>
 
                     <p>
-                        A responsive portfolio website built using semantic HTML5 and external CSS to showcase
-                        my education, technical skills, projects, and contact information.
+                        A responsive portfolio website built using semantic HTML5 and external CSS to showcase my education, technical skills, projects, and contact information.
                     </p>
 
                     <a href="https://github.com/Sujal-2/Portfolio_Assignment" target="_blank">
@@ -141,33 +133,49 @@
                     </a>
 
                 </article>
-                <!-- Project 3 -->
-                <article class="project">
-                    <h3>Image Slider Library</h3>
-                    <p>
-                        A responsive image slider built using HTML, CSS, and vanilla JavaScript.
-                        It includes previous and next controls, dynamic navigation dots,
-                        smooth horizontal sliding animations, responsive layout,
-                        and seamless infinite looping.
-                    </p>
-                    <div class="slider">
-                        <div class="slider-track">
-                            <div class="slide">
-                                <img src="my-profile-img.jpg" alt="Slide 1">
-                            </div>
-                            <div class="slide">
-                                <img src="ninja.jpg" alt="Slide 2">
-                            </div>
-                            <div class="slide">
-                                <img src="profile.jpg" alt="Slide 3">
-                            </div>
-                        </div>
-                        <button class="prev">&#10094;</button>
-                        <button class="next">&#10095;</button>
-                        <div class="dots"></div>
-                    </div>
-                </article>
 
+            </div>
+
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+
+            <h2>Image Gallery</h2>
+
+            <p class="gallery-text">
+                This gallery demonstrates the image slider created using HTML, CSS, and JavaScript.
+                Click the arrows or navigation dots to browse the images.
+            </p>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="my-profile-img.jpg" alt="Slide 1">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="ninja.jpg" alt="Slide 2">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="profile.jpg" alt="Slide 3">
+                </div>
+
+                <!-- Previous and Next Buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+
+            <!-- Navigation Dots -->
+            <div style="text-align:center; margin-top:15px;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
 
         </section>
