@@ -1,161 +1,45 @@
-const track = document.querySelector(".slider-track");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-const dotsContainer = document.querySelector(".dots");
+let slideIndex = 1;
+showSlides(slideIndex);
 
-// Exit if slider doesn't exist
-if (track) {
+// Next/Previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
-    const slides = Array.from(document.querySelectorAll(".slide"));
-    const totalSlides = slides.length;
+// Dot controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
 
-    // Clone first and last slides
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[totalSlides - 1].cloneNode(true);
+// Display the current slide
+function showSlides(n) {
 
-    firstClone.classList.add("clone");
-    lastClone.classList.add("clone");
+    let i;
 
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, slides[0]);
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
-    const allSlides = document.querySelectorAll(".slide");
-
-    let currentIndex = 1;
-    let slideWidth = 100;
-
-    // Move to first real slide
-    track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-
-    // -------------------------
-    // Create Navigation Dots
-    // -------------------------
-
-    slides.forEach((_, index) => {
-
-        const dot = document.createElement("span");
-
-        dot.classList.add("dot");
-
-        if (index === 0) {
-            dot.classList.add("active");
-        }
-
-        dot.addEventListener("click", () => {
-
-            currentIndex = index + 1;
-
-            moveSlider();
-
-        });
-
-        dotsContainer.appendChild(dot);
-
-    });
-
-    const dots = document.querySelectorAll(".dot");
-
-    // -------------------------
-    // Update Dots
-    // -------------------------
-
-    function updateDots() {
-
-        dots.forEach(dot => dot.classList.remove("active"));
-
-        let activeIndex = currentIndex - 1;
-
-        if (activeIndex < 0) {
-            activeIndex = totalSlides - 1;
-        }
-
-        if (activeIndex >= totalSlides) {
-            activeIndex = 0;
-        }
-
-        dots[activeIndex].classList.add("active");
-
+    if (n > slides.length) {
+        slideIndex = 1;
     }
 
-    // -------------------------
-    // Move Slider
-    // -------------------------
-
-    function moveSlider() {
-
-        track.style.transition = "transform 0.5s ease";
-
-        track.style.transform =
-            `translateX(-${currentIndex * slideWidth}%)`;
-
-        updateDots();
-
+    if (n < 1) {
+        slideIndex = slides.length;
     }
 
-    // -------------------------
-    // Next Button
-    // -------------------------
+    // Hide all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
 
-    nextBtn.addEventListener("click", () => {
+    // Remove active class from all dots
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
 
-        currentIndex++;
+    // Show current slide
+    slides[slideIndex - 1].style.display = "block";
 
-        moveSlider();
-
-    });
-
-    // -------------------------
-    // Previous Button
-    // -------------------------
-
-    prevBtn.addEventListener("click", () => {
-
-        currentIndex--;
-
-        moveSlider();
-
-    });
-
-    // -------------------------
-    // Infinite Loop
-    // -------------------------
-
-    track.addEventListener("transitionend", () => {
-
-        if (allSlides[currentIndex].classList.contains("clone")) {
-
-            track.style.transition = "none";
-
-            if (currentIndex === 0) {
-
-                currentIndex = totalSlides;
-
-            } else if (currentIndex === allSlides.length - 1) {
-
-                currentIndex = 1;
-
-            }
-
-            track.style.transform =
-                `translateX(-${currentIndex * slideWidth}%)`;
-
-        }
-
-        updateDots();
-
-    });
-
-    // -------------------------
-    // Keep Position on Resize
-    // -------------------------
-
-    window.addEventListener("resize", () => {
-
-        track.style.transition = "none";
-
-        track.style.transform =
-            `translateX(-${currentIndex * slideWidth}%)`;
-
-    });
-
+    // Highlight active dot
+    dots[slideIndex - 1].className += " active";
 }
